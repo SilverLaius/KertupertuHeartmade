@@ -7,6 +7,6 @@ app.get('/', (req,res) => {
 	res.send('welcome to the home page')
 })
 
-app.listen(8000, ()=> {
-	console.log("Listening on port 8000")
+app.listen(3001, ()=> {
+	console.log("Listening on port 3001")
 })
