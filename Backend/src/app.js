@@ -3,16 +3,17 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mySql = require('mysql')
 const app = express()
+const config = require('../config/config')
 const SELECT_ALL_QUERY = 'SELECT * FROM test'
 
 app.use(bodyParser.json())
 app.use(cors())
 
 const connection = mySql.createConnection({
-	host:'localhost',
-	user:'root',
-	password:'password',
-	database:'kertupertu'
+	host: config.database.host,
+	user: config.database.user,
+	password: config.database.password,
+	database: config.database.database
 })
 
 connection.connect(err => {
